@@ -54,8 +54,15 @@ nav li:hover {
 }
 
 nav li a.active {
-  border-bottom-color: white;
+  border-bottom-color: aqua;
 }
+
+
+/* Main  */
+main {
+  background-color: gainsboro;
+}
+
 
 /* Main HomePage & Chi siamo  */
 main#homepage,
