@@ -18,6 +18,8 @@ a {
   cursor: pointer;
 }
 
+
+/*   Header     */
 header {
   background-color: indigo;
   color: white;
@@ -52,6 +54,18 @@ nav li a.active {
   border-bottom-color: white;
 }
 
+/* Main HomePage  */
+main#homepage,
+main#chi-siamo {
+  text-align: center;
+  padding: 10%;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+main#posts {}
+
+/* Footer */
 
 footer {
   background-color: indigo;

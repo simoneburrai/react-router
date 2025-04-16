@@ -1,5 +1,5 @@
 const Chisiamo = () => {
-    return <main>Chi Siamo Main</main>
+    return <main id="chi-siamo">Chi Siamo</main>
 }
 
 export default Chisiamo;

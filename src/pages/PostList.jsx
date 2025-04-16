@@ -1,5 +1,16 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const apiUrl = "";
+
 const PostList = () => {
-    return <main>Lista dei post</main>
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        axios.get
+    }, [])
+
+
+    return <main id="posts">Lista dei post</main>
 }
 
 export default PostList;
