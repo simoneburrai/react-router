@@ -3,17 +3,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const apiUrl = "https://jsonplaceholder.typicode.com/posts";
 
-const PostList = ({ setPost }) => {
+const PostList = () => {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         axios.get(apiUrl)
             .then(res => setPosts(res.data))
     }, [])
-
-    const HandleClick = (post) => {
-        setPost(post);
-    }
-
 
 
     return <main id="posts">
@@ -23,7 +18,7 @@ const PostList = ({ setPost }) => {
                 return <div className="post" key={post.id}>
                     <h4>{post.title}</h4>
                     <p>{post.body}</p>
-                    <Link onClick={() => HandleClick(post)} to={`/posts/${post.id}`}>Link al Post</Link>
+                    <Link to={`/posts/${post.id}`}>Link al Post</Link>
                 </div>
 
             })}

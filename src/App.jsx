@@ -15,8 +15,8 @@ function App() {
       <Route element={<DefaultLayout />}>
         <Route path="/" element={<Homepage />} />
         <Route path="/chi-siamo" element={<Chisiamo />} />
-        <Route path="/posts" element={<PostList setPost={setPost} />} />
-        <Route path="/posts/:id" element={<Post post={post} />} />
+        <Route path="/posts" element={<PostList />} />
+        <Route path="/posts/:id" element={<Post />} />
       </Route>
 
     </Routes>
