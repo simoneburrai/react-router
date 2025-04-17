@@ -138,7 +138,8 @@ main#posts h2 {
   margin: 0 auto 30px;
 }
 
-.post-page button {
+.post-page button,
+.error button {
   background-color: indigo;
   color: white;
   border: 0px;
@@ -148,7 +149,8 @@ main#posts h2 {
   margin-left: 10px
 }
 
-.post-page button:hover {
+.post-page button:hover,
+.error button:hover {
   filter: brightness(1.5);
 }
 
@@ -178,4 +180,25 @@ footer ul {
 footer a:hover {
   text-decoration: underline;
   transform: scale(1.1);
+}
+
+.error {
+  text-align: center;
+  background-color: darkorchid;
+  width: 50%;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.error h1 {
+  margin: 20px;
+  color: white;
+}
+
+.loading {
+  color: blue;
+  font-size: 30px;
+  padding: 20px;
+  text-align: center;
 }

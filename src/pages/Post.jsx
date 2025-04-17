@@ -1,11 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
+
 const apiUrl = "https://jsonplaceholder.typicode.com/posts";
 
-
 function Post() {
+
     const [post, setPost] = useState({});
+    const [err, setErr] = useState(null);
+    const [loading, setLoading] = useState(false);
     let { id } = useParams();
     id = parseInt(id);
     const apiUrlPost = `${apiUrl}/${id}`;
@@ -13,19 +17,31 @@ function Post() {
     let nextId = (id + 1)
 
     useEffect(() => {
+        setLoading(true);
         axios.get(apiUrlPost)
-            .then(res => setPost(res.data));
+            .then(res => {
+                setPost(res.data);
+            })
+            .catch(() => setErr(true))
+            .finally(() => setLoading(false))
     }, [id])
 
-    console.log("Questi son gli Id", previousId, nextId);
+    if (err) {
+        return <ErrorPage />
+    }
 
+    console.log("Loading", loading)
+    if (loading) {
+        let charging = "caricamento in corso";
+        return <div className="loading">{charging}</div>
+    }
 
-    return <div className="post-page">
+    return <main className="post-page">
         <h3>{post.title}</h3>
         <p>{post.body}</p>
         <button><Link to={`/posts/${previousId}`}>Post Precedente</Link></button>
         <button><Link to={`/posts/${nextId}`}>Post Successivo</Link></button>
-    </div>
+    </main>
 }
 
 export default Post;
