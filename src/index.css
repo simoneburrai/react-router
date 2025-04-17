@@ -106,6 +106,20 @@ main#posts h2 {
   text-transform: uppercase;
 }
 
+.post .post-link {
+  color: white;
+  background-color: indigo;
+  text-align: center;
+  margin: 10px auto 0;
+  width: 30%;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.post .post-link:hover {
+  filter: brightness(1.5);
+}
+
 /* Footer */
 
 footer {

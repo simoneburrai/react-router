@@ -4,11 +4,9 @@ import Chisiamo from "./pages/Chisiamo"
 import PostList from "./pages/PostList"
 import Post from "./pages/Post"
 import DefaultLayout from "./layouts/DefaultLayout"
-import { useState } from "react";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
-  const [post, setPost] = useState({});
-
 
   return <BrowserRouter>
     <Routes>
@@ -18,7 +16,7 @@ function App() {
         <Route path="/posts" element={<PostList />} />
         <Route path="/posts/:id" element={<Post />} />
       </Route>
-
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
 
   </BrowserRouter>

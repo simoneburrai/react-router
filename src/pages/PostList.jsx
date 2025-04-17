@@ -18,7 +18,7 @@ const PostList = () => {
                 return <div className="post" key={post.id}>
                     <h4>{post.title}</h4>
                     <p>{post.body}</p>
-                    <Link to={`/posts/${post.id}`}>Link al Post</Link>
+                    <Link className="post-link" to={`/posts/${post.id}`}>Link al Post</Link>
                 </div>
 
             })}
