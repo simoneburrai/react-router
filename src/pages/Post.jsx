@@ -20,7 +20,7 @@ function Post() {
     console.log("Questi son gli Id", previousId, nextId);
 
 
-    return <div>
+    return <div className="post-page">
         <h3>{post.title}</h3>
         <p>{post.body}</p>
         <button><Link to={`/posts/${previousId}`}>Post Precedente</Link></button>

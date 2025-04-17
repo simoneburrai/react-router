@@ -120,6 +120,38 @@ main#posts h2 {
   filter: brightness(1.5);
 }
 
+/* Post Page  */
+
+.post-page {
+  padding: 50px;
+  text-align: center;
+}
+
+.post-page h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.post-page p {
+  width: 70%;
+  margin: 0 auto 30px;
+}
+
+.post-page button {
+  background-color: indigo;
+  color: white;
+  border: 0px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-left: 10px
+}
+
+.post-page button:hover {
+  filter: brightness(1.5);
+}
+
 /* Footer */
 
 footer {
