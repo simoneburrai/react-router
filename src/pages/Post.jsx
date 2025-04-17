@@ -8,32 +8,39 @@ const apiUrl = "https://jsonplaceholder.typicode.com/posts";
 function Post() {
 
     const [post, setPost] = useState({});
+    const [dots, setDots] = useState(".");
     const [err, setErr] = useState(null);
     const [loading, setLoading] = useState(false);
     let { id } = useParams();
     id = parseInt(id);
     const apiUrlPost = `${apiUrl}/${id}`;
     const previousId = ((id - 1) <= 0) ? id : (id - 1);
-    let nextId = (id + 1)
-
+    const nextId = (id + 1);
     useEffect(() => {
         setLoading(true);
+        const interval = setInterval(() => {
+            setDots(prev => prev + ".")
+        }, 200)
         axios.get(apiUrlPost)
             .then(res => {
                 setPost(res.data);
             })
             .catch(() => setErr(true))
-            .finally(() => setLoading(false))
+            .finally(() => {
+                setLoading(false);
+                clearInterval(interval);
+                setDots(".")
+            })
     }, [id])
 
     if (err) {
         return <ErrorPage />
     }
 
-    console.log("Loading", loading)
     if (loading) {
+
         let charging = "caricamento in corso";
-        return <div className="loading">{charging}</div>
+        return <div className="loading">{charging}{dots}</div>
     }
 
     return <main className="post-page">
